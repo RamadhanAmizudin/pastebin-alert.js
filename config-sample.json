@@ -1,0 +1,17 @@
+{
+    "db": {
+        "uri": "mysql://user:password@localhost/databasename"
+    },
+    "pastebin": {
+        "api_dev_key" : null,
+        "api_user_key" : null,
+        "api_user_name" : null,
+        "api_user_password" : null
+    },
+    "keywords": [
+        "exploit",
+        "ayam",
+        "wat"
+    ],
+    "delay": 60000
+}
