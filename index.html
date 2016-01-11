@@ -1,0 +1,151 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Pastebin-alert.js by RamadhanAmizudin</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-dark.css">
+    <script src="javascripts/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Pastebin-alert.js</h1>
+        <p>This tool basically fetch latest public paste on pastebin, and show on console log if any keyword match.</p>
+        <p class="view"><a href="https://github.com/RamadhanAmizudin/pastebin-alert.js">View the Project on GitHub <small>RamadhanAmizudin/pastebin-alert.js</small></a></p>
+        <ul>
+          <li><a href="https://github.com/RamadhanAmizudin/pastebin-alert.js/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/RamadhanAmizudin/pastebin-alert.js/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/RamadhanAmizudin/pastebin-alert.js">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
+<a id="pastebin-alertjs" class="anchor" href="#pastebin-alertjs" aria-hidden="true"><span class="octicon octicon-link"></span></a>pastebin-alert.js</h1>
+
+<h1>
+<a id="pastebin-alert" class="anchor" href="#pastebin-alert" aria-hidden="true"><span class="octicon octicon-link"></span></a>Pastebin Alert</h1>
+
+<p>This tool basically fetch latest public paste on pastebin, and show on console log if any keyword match.</p>
+
+<h1>
+<a id="requirement" class="anchor" href="#requirement" aria-hidden="true"><span class="octicon octicon-link"></span></a>Requirement</h1>
+
+<ul>
+<li>MySQL Server</li>
+<li>NodeJS (obviously)</li>
+<li>NPM</li>
+</ul>
+
+<h1>
+<a id="installing" class="anchor" href="#installing" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installing</h1>
+
+<pre><code>$ npm install
+$ cp config-sample.json config.json
+$ vim config.json // for configuring db connection
+</code></pre>
+
+<h1>
+<a id="run" class="anchor" href="#run" aria-hidden="true"><span class="octicon octicon-link"></span></a>Run</h1>
+
+<pre><code>node app.js
+</code></pre>
+
+<h1>
+<a id="notes" class="anchor" href="#notes" aria-hidden="true"><span class="octicon octicon-link"></span></a>Notes</h1>
+
+<pre><code>1. Delay in configuration file is in milisecond
+2. Keyword doesn't accept regexp.
+3. Pastebin developer key can be found here: http://pastebin.com/api#1
+4. Setting delay lower than 1 minute might get you banned on pastebin :)
+</code></pre>
+
+<h1>
+<a id="events" class="anchor" href="#events" aria-hidden="true"><span class="octicon octicon-link"></span></a>Events</h1>
+
+<h3>
+<a id="error" class="anchor" href="#error" aria-hidden="true"><span class="octicon octicon-link"></span></a>'error'</h3>
+
+<ul>
+<li>Error if any</li>
+</ul>
+
+<h3>
+<a id="archivepasteid" class="anchor" href="#archivepasteid" aria-hidden="true"><span class="octicon octicon-link"></span></a>'archive.pasteid'</h3>
+
+<ul>
+<li>list of pastebin id fetched at pastebin.com/archive</li>
+</ul>
+
+<h3>
+<a id="new" class="anchor" href="#new" aria-hidden="true"><span class="octicon octicon-link"></span></a>'new'</h3>
+
+<ul>
+<li>return data of pastebin id.</li>
+</ul>
+
+<p>Example:</p>
+
+<div class="highlight highlight-source-js"><pre>{
+  pastebin_id<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>xxxx<span class="pl-pds">'</span></span>,
+  title<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>Untitled<span class="pl-pds">'</span></span>,
+  created<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>2015-08-01T04:19:12+08:00<span class="pl-pds">'</span></span>,
+  author<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>guest<span class="pl-pds">'</span></span>,
+  ispro_account<span class="pl-k">:</span> <span class="pl-c1">false</span>,
+  size<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>53.10 KB<span class="pl-pds">'</span></span>,
+  expires<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>Never<span class="pl-pds">'</span></span>,
+  syntax<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>None<span class="pl-pds">'</span></span>,
+  content<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>pastebin content<span class="pl-pds">'</span></span>
+}</pre></div>
+
+<h1>
+<a id="status" class="anchor" href="#status" aria-hidden="true"><span class="octicon octicon-link"></span></a>Status</h1>
+
+<p>This project was purely for my personal learning. If it isn't obvious, this shouldn't be incorporated in any type of application, and the only reason it is open source is that if someone would find useful information or parts from it.</p>
+
+<h1>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span class="octicon octicon-link"></span></a>License</h1>
+
+<p>The MIT License (MIT)</p>
+
+<p>Copyright (c) 2015 Ahmad Ramadhan Amizudin</p>
+
+<p>Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:</p>
+
+<p>The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.</p>
+
+<p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.</p>
+
+<h1>
+<a id="questions--comments" class="anchor" href="#questions--comments" aria-hidden="true"><span class="octicon octicon-link"></span></a>Questions &amp; Comments</h1>
+
+<p>If you encounter a bug, please feel free to post it on GitHub. For questions or comments.</p>
+      </section>
+    </div>
+    <footer>
+      <p>Project maintained by <a href="https://github.com/RamadhanAmizudin">RamadhanAmizudin</a></p>
+      <p>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></p>
+    </footer>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+    
+  </body>
+</html>
